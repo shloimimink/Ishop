@@ -57,7 +57,7 @@ const ProductDetailsPage = async (props: {
                 <div className="mb-2 flex justify-between">
                   <div>Status</div>
                   {product.stock > 0 ? (
-                    <Badge variant="outline">In Stock!!</Badge>
+                    <Badge variant="outline">In Stock</Badge>
                   ) : (
                     <Badge variant="destructive">Out Of Stock</Badge>
                   )}
