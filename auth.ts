@@ -97,7 +97,7 @@ export const config = {
           });
 
           // The cart is already assigned to the same user, no action needed
-          if (!sessionCart) return;
+          if (!sessionCart) return token;
 
           if (sessionCart.userId !== user.id) {
             // Delete current user cart
