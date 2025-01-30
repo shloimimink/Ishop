@@ -106,7 +106,7 @@ export async function updateUserAddress(data: ShippingAddress) {
 
     return {
       success: true,
-      message: "User updaed successfully",
+      message: "User updated successfully",
     };
   } catch (error) {
     return { success: false, message: formatError(error) };
@@ -119,7 +119,6 @@ export async function updateUserPaymentMethod(
 ) {
   try {
     const session = await auth();
-
     const currentUser = await prisma.user.findFirst({
       where: { id: session?.user?.id },
     });
