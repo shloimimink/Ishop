@@ -53,7 +53,7 @@ export async function signUpUser(prevState: unknown, formData: FormData) {
 
     const plainPassword = user.password;
 
-    user.password = hashSync(user.password, 10);
+    user.password = await hash(user.password);
 
     await prisma.user.create({
       data: {
@@ -106,7 +106,7 @@ export async function updateUserAddress(data: ShippingAddress) {
 
     return {
       success: true,
-      message: "User updated successfully",
+      message: "User updaed successfully",
     };
   } catch (error) {
     return { success: false, message: formatError(error) };
@@ -119,6 +119,7 @@ export async function updateUserPaymentMethod(
 ) {
   try {
     const session = await auth();
+
     const currentUser = await prisma.user.findFirst({
       where: { id: session?.user?.id },
     });
