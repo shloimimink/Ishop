@@ -85,6 +85,7 @@ export function formatId(id: string) {
 // Format date and times
 export const formatDateTime = (dateString: Date) => {
   const dateTimeOptions: Intl.DateTimeFormatOptions = {
+    timeZone: "CST",
     month: "short", // abbreviated month name (e.g., 'Oct')
     year: "numeric", // abbreviated month name (e.g., 'Oct')
     day: "numeric", // numeric day of the month (e.g., '25')
